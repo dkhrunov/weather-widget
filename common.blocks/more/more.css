@@ -1,0 +1,12 @@
+.more {
+	width: 50%;
+	text-align: right;
+	float: right;
+	font-size: 24px;
+	color: #fff;
+	display: block;
+ }
+ 
+ .more .fa {
+	cursor: pointer;
+ }

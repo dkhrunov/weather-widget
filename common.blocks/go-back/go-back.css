@@ -1,0 +1,10 @@
+.go-back {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 24px;
+	color: #fff;
+ }
+ 
+ .go-back .fa {
+	cursor: pointer;
+ }

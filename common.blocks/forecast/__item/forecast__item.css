@@ -1,0 +1,11 @@
+.forecast__item {
+	padding: 10px 0;
+	border-bottom: 2px solid #fff;
+	display: flex;
+	font-weight: bold;
+	color: #fff;
+ }
+ 
+ .forecast__item:last-child {
+	border-bottom: none;
+ }

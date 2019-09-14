@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>WeatherApp</title>
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+	<!-- Стиль самой страницы -->
+	<link rel="stylesheet" href="index.css">
+	<!-- Подключение стилей блоков -->
+	<link rel="stylesheet" href="./common.blocks/double-sided-card/double-sided-card.css">
+	<link rel="stylesheet" href="./common.blocks/double-sided-card/__back/double-sided-card__back.css">
+	<link rel="stylesheet" href="./common.blocks/double-sided-card/__front/double-sided-card__front.css">
+	<link rel="stylesheet" href="./common.blocks/forecast/forecast.css">
+	<link rel="stylesheet" href="./common.blocks/forecast/__day/forecast__day.css">
+	<link rel="stylesheet" href="./common.blocks/forecast/__item/forecast__item.css">
+	<link rel="stylesheet" href="./common.blocks/forecast/__temprature/forecast__temprature.css">
+	<link rel="stylesheet" href="./common.blocks/go-back/go-back.css">
+	<link rel="stylesheet" href="./common.blocks/location/location.css">
+	<link rel="stylesheet" href="./common.blocks/more/more.css">
+	<link rel="stylesheet" href="./common.blocks/weather/weather.css">
+	<link rel="stylesheet" href="./common.blocks/weather/__current/weather__current.css">
+	<link rel="stylesheet" href="./common.blocks/weather/__day/weather__day.css">
+	<link rel="stylesheet" href="./common.blocks/weather/__icon/weather__icon.css">
+	<!-- Модификаторы блоков лучше подключать после блоков, для принятия изменений состояния -->
+	<!-- Подлючение стилей мидификаторов -->
+	<link rel="stylesheet" href="./common.blocks/double-sided-card/_active-side/double-sided-card_active-side.css">
+</head>
+<body>
+	<div class="double-sided-card">
+		<!-- Передняя (видимая по умолчанию) часть -->
+		<div class="double-sided-card__front double-sided-card_active-side">
+			<!-- Заголовок блока -->
+		  <div class="location">Penza</div>
+		  <div class="more"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+			<!-- END -->
+
+		  <!-- Блок с текущей погодой -->
+		  <div class="weather">
+			 <i class="weather__icon fa fa-cloud" aria-hidden="true"></i>
+			 <h1 class="weather__current">8<sup>o</sup><br><span class="weather__day">Today</span></h1>
+		  </div>
+		  <!-- END -->
+
+		  <!-- Прогноз на несколько дней вперед -->
+		  <ul class="forecast">
+			 <li class="forecast__item">
+				<div class="forecast__day">Sunday</div>
+				<div class="forecast__temprature"><i class="fa fa-cloud" aria-hidden="true"></i> 9<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Monday</div>
+				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Tuesday</div>
+				<div class="forecast__temprature"><i class="fa fa-snowflake" aria-hidden="true"></i> 2<sup>o</sup></div>
+			 </li>
+		  </ul>
+		  <!-- END -->
+		</div>
+
+		<!-- Задняя (невидимая по умолчанию) часть -->
+		<div class="double-sided-card__back">
+			<!-- Заголовок блока -->
+		  <div class="go-back"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></div>
+			<!-- END -->
+
+		  <!-- Прогноз на несколько дней вперед -->
+		  <ul class="forecast">
+			 <li class="forecast__item">
+				<div class="forecast__day">Yesterday</div>
+				<div class="forecast__temprature"><i class="fa fa-snowflake" aria-hidden="true"></i> 3<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Today</div>
+				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Tommorrow</div>
+				<div class="forecast__temprature"><i class="fa fa-cloud" aria-hidden="true"></i> 10<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Sunday</div>
+				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Monday</div>
+				<div class="forecast__temprature"><i class="fa fa-snowflake" aria-hidden="true"></i> 2<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Tuesday</div>
+				<div class="forecast__temprature"><i class="fa fa-cloud" aria-hidden="true"></i> 5<sup>o</sup></div>
+			 </li>
+			 <li class="forecast__item">
+				<div class="forecast__day">Wednesday</div>
+				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
+			 </li>
+		  </ul>
+		  <!-- END -->
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="./common.blocks/double-sided-card/double-side-card.js"></script>
+</body>
+</html>
