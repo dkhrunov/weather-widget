@@ -13,5 +13,5 @@ Building Weather App, applying BEM methodology
   **get api key from [this site.](https://www.weatherbit.io)**
 
 - /index.html:
-  - line 116: ```<script src="YOUR_LINK_FOR_FONT_AWESOME"></script>``` 
-  get your [link to Font Awesome.](https://fontawesome.com)
+  - line 116: ```<script src="YOUR_LINK_FOR_FONT_AWESOME"></script>```
+  **get your [link to Font Awesome.](https://fontawesome.com)**
