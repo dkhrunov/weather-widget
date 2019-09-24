@@ -2,3 +2,7 @@
 	margin: 0;
 	padding: 0;
  }
+
+ .double-sided-card__back .forecast {
+	padding: 50px 0 20px;
+ }

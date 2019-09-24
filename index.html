@@ -5,10 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>WeatherApp</title>
-	<!-- FontAwesome -->
-	<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+	<!-- Сначала подключаються стороние библиотеки, для послед. переопределения их блоков-->
+	<!-- Weather Icon -->
+	<link rel="stylesheet" href="./static/weather-icons-master/css/weather-icons.min.css">
+
 	<!-- Стиль самой страницы -->
 	<link rel="stylesheet" href="index.css">
+
 	<!-- Подключение стилей блоков -->
 	<link rel="stylesheet" href="./common.blocks/double-sided-card/double-sided-card.css">
 	<link rel="stylesheet" href="./common.blocks/double-sided-card/__back/double-sided-card__back.css">
@@ -17,13 +20,14 @@
 	<link rel="stylesheet" href="./common.blocks/forecast/__day/forecast__day.css">
 	<link rel="stylesheet" href="./common.blocks/forecast/__item/forecast__item.css">
 	<link rel="stylesheet" href="./common.blocks/forecast/__temprature/forecast__temprature.css">
-	<link rel="stylesheet" href="./common.blocks/go-back/go-back.css">
-	<link rel="stylesheet" href="./common.blocks/location/location.css">
-	<link rel="stylesheet" href="./common.blocks/more/more.css">
+	<link rel="stylesheet" href="./common.blocks/header-card/header-card.css">
+	<link rel="stylesheet" href="./common.blocks/header-card/__btn/header-card__btn.css">
+	<link rel="stylesheet" href="./common.blocks/header-card/__text/header-card__text.css">
 	<link rel="stylesheet" href="./common.blocks/weather/weather.css">
 	<link rel="stylesheet" href="./common.blocks/weather/__current/weather__current.css">
 	<link rel="stylesheet" href="./common.blocks/weather/__day/weather__day.css">
 	<link rel="stylesheet" href="./common.blocks/weather/__icon/weather__icon.css">
+	
 	<!-- Модификаторы блоков лучше подключать после блоков, для принятия изменений состояния -->
 	<!-- Подлючение стилей мидификаторов -->
 	<link rel="stylesheet" href="./common.blocks/double-sided-card/_active-side/double-sided-card_active-side.css">
@@ -33,31 +37,33 @@
 		<!-- Передняя (видимая по умолчанию) часть -->
 		<div class="double-sided-card__front double-sided-card_active-side">
 			<!-- Заголовок блока -->
-		  <div class="location">Penza</div>
-		  <div class="more"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+			<div class="header-card">
+				<div class="header-card__text">Penza <i class="fas fa-map-marker-alt"></i></div>
+				<div class="header-card__btn more"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+			</div>
 			<!-- END -->
 
 		  <!-- Блок с текущей погодой -->
 		  <div class="weather">
-			 <i class="weather__icon fa fa-cloud" aria-hidden="true"></i>
-			 <h1 class="weather__current">8<sup>o</sup><br><span class="weather__day">Today</span></h1>
+			 	<span class="weather__icon"></span>
+			 	<h1 class="weather__current"></h1>
 		  </div>
 		  <!-- END -->
 
 		  <!-- Прогноз на несколько дней вперед -->
 		  <ul class="forecast">
-			 <li class="forecast__item">
-				<div class="forecast__day">Sunday</div>
-				<div class="forecast__temprature"><i class="fa fa-cloud" aria-hidden="true"></i> 9<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Monday</div>
-				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Tuesday</div>
-				<div class="forecast__temprature"><i class="fa fa-snowflake-o" aria-hidden="true"></i> 2<sup>o</sup></div>
-			 </li>
+				<li class="forecast__item" data-day="1">
+					<div class="forecast__day">Sunday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+			 	</li>
+				<li class="forecast__item" data-day="2">
+					<div class="forecast__day">Monday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+				<li class="forecast__item" data-day="3">
+					<div class="forecast__day">Tuesday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
 		  </ul>
 		  <!-- END -->
 		</div>
@@ -65,45 +71,53 @@
 		<!-- Задняя (невидимая по умолчанию) часть -->
 		<div class="double-sided-card__back">
 			<!-- Заголовок блока -->
-		  <div class="go-back"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></div>
+			<div class="header-card">
+				<div class="header-card__text">7 Day Forecast</div>
+				<div class="header-card__btn go-back"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></div>
+			</div>			
 			<!-- END -->
 
 		  <!-- Прогноз на несколько дней вперед -->
 		  <ul class="forecast">
-			 <li class="forecast__item">
-				<div class="forecast__day">Yesterday</div>
-				<div class="forecast__temprature"><i class="fa fa-snowflake-o" aria-hidden="true"></i> 3<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Today</div>
-				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Tommorrow</div>
-				<div class="forecast__temprature"><i class="fa fa-cloud" aria-hidden="true"></i> 10<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Sunday</div>
-				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Monday</div>
-				<div class="forecast__temprature"><i class="fa fa-snowflake-o" aria-hidden="true"></i> 2<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Tuesday</div>
-				<div class="forecast__temprature"><i class="fa fa-cloud" aria-hidden="true"></i> 5<sup>o</sup></div>
-			 </li>
-			 <li class="forecast__item">
-				<div class="forecast__day">Wednesday</div>
-				<div class="forecast__temprature"><i class="fa fa-tint" aria-hidden="true"></i> 6<sup>o</sup></div>
-			 </li>
-		  </ul>
-		  <!-- END -->
+				<li class="forecast__item" data-day="0">
+					<div class="forecast__day">Yesterday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+				<li class="forecast__item" data-day="1">
+					<div class="forecast__day">Today</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+				<li class="forecast__item" data-day="2">
+					<div class="forecast__day">Tommorrow</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+				<li class="forecast__item" data-day="3">
+					<div class="forecast__day">Sunday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+				<li class="forecast__item" data-day="4">
+					<div class="forecast__day">Monday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+				<li class="forecast__item" data-day="5">
+					<div class="forecast__day">Tuesday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+				<li class="forecast__item" data-day="6">
+					<div class="forecast__day">Wednesday</div>
+					<div class="forecast__temprature"><span class="forecast__icon"></span><span class="forecast__temprature-max"></span> / </span><span class="forecast__temprature-min"></span></div>
+				</li>
+			</ul>
+			<!-- END -->
 		</div>
 	</div>
 
+	<!-- Font awesome 5 -->
+	<script src="https://kit.fontawesome.com/6a3d716f84.js"></script>
+	<!-- Jquery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 	<script src="./common.blocks/double-sided-card/double-side-card.js"></script>
+	<script src="./static/scripts/weather.js"></script>
 </body>
 </html>
