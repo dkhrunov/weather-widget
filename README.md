@@ -1,2 +1,5 @@
 # WeatherApp
-Building Weather App, using ReactJS and applying BEM methodology
+Building Weather App, applying BEM methodology
+
+# Example:
+![Example](https://github.com/therealpanda98/WeatherApp/blob/master/Screenshots/main.gif)
