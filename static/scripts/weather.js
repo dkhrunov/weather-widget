@@ -49,7 +49,7 @@ $( document ).ready(function() {
 	
 	// Сделать ОДИН ЗАПРОС ДЛЯ ЭКОНОМИИ ТРАФИКА И ВРЕМЕНИ
 
-	fetch("https://api.weatherbit.io/v2.0/current?city=Penza&country=RU&key=773a22d1de854e4cb602edb4aa0fdbb4")
+	fetch("https://api.weatherbit.io/v2.0/current?city=Penza&country=RU&key=YOUR_API_KEY_HERE")
 	.then(res => res.json())
 	.then(function(response) {
 		let data = response.data[0];
@@ -63,7 +63,7 @@ $( document ).ready(function() {
 	})
 	.catch(error => console.error('Ошибка:', error));
 
-	fetch("https://api.weatherbit.io/v2.0/forecast/daily?city=Penza&country=RU&days=7&key=773a22d1de854e4cb602edb4aa0fdbb4")
+	fetch("https://api.weatherbit.io/v2.0/forecast/daily?city=Penza&country=RU&days=7&key=YOUR_API_KEY_HERE")
 	.then(res => res.json())
 	.then(function(response) {
 		let data = response.data;
